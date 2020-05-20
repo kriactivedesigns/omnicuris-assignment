@@ -1,11 +1,33 @@
 import React from 'react'
 import Typography from "@material-ui/core/Typography";
+import Paper from '@material-ui/core/Paper'
+import { makeStyles, useTheme } from '@material-ui/core';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        marginTop: '20px',
+        padding: '15px 10px'
+    }
+}))
 
 function Title(){
+
+    const classes = useStyles()
+    const theme = useTheme()
+
     return(
-        <Typography>
-            This is title
-        </Typography>
+        <Paper elevation={2}
+            className={classes.root}>
+            <Typography color="textSecondary"
+                    variant="h6">
+                {`Thyroid in Pregnancy: `}
+                <Typography color="primary" 
+                    component="span"
+                    variant="h6">
+                         Introduction
+                </Typography>
+            </Typography>
+        </Paper>
     )
 }
 
