@@ -8,7 +8,6 @@ import {
     useTheme
 } from '@material-ui/core'
 import { LargeHeading } from '../Common/Common';
-import image from '../../static/me_bw.png'
 import { connect } from 'react-redux'
 
 const mapStatesToProps = (store) => {
