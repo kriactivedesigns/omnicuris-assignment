@@ -34,7 +34,6 @@ function ChapterList(props){
     const dispatch = useDispatch()
 
     const handleChapterOnClick = (chapter) => {
-        console.log(chapter)
         dispatch(setChapterData({
             url: chapter.content,
             title: chapter.title

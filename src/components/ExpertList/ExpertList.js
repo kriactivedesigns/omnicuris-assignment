@@ -38,7 +38,6 @@ function Expert(props) {
     const theme = useTheme()
 
     const { expert } = props
-    console.log(expert)
 
     return(
         <Grid container direction="column" justify="center" spacing={2}>
