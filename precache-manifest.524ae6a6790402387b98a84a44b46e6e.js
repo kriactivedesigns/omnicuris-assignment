@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2e02368552ca302e9281ff46b3b5c781",
+    "revision": "ca20810ff57df8bc663c6cb67ce21485",
     "url": "/omnicuris-assignment/index.html"
   },
   {
-    "revision": "bf31ba2dca12761a56cb",
+    "revision": "ef06359475423818a695",
     "url": "/omnicuris-assignment/static/css/main.7fe35e4e.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/omnicuris-assignment/static/js/2.cd3b5010.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bf31ba2dca12761a56cb",
-    "url": "/omnicuris-assignment/static/js/main.2e3bf115.chunk.js"
+    "revision": "ef06359475423818a695",
+    "url": "/omnicuris-assignment/static/js/main.c3b7414a.chunk.js"
   },
   {
     "revision": "fecdcf21385237300e1c",

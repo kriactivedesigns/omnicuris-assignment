@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/omnicuris-assignment/static/css/main.7fe35e4e.chunk.css",
-    "main.js": "/omnicuris-assignment/static/js/main.2e3bf115.chunk.js",
-    "main.js.map": "/omnicuris-assignment/static/js/main.2e3bf115.chunk.js.map",
+    "main.js": "/omnicuris-assignment/static/js/main.c3b7414a.chunk.js",
+    "main.js.map": "/omnicuris-assignment/static/js/main.c3b7414a.chunk.js.map",
     "runtime-main.js": "/omnicuris-assignment/static/js/runtime-main.d749d1b5.js",
     "runtime-main.js.map": "/omnicuris-assignment/static/js/runtime-main.d749d1b5.js.map",
     "static/js/2.cd3b5010.chunk.js": "/omnicuris-assignment/static/js/2.cd3b5010.chunk.js",
     "static/js/2.cd3b5010.chunk.js.map": "/omnicuris-assignment/static/js/2.cd3b5010.chunk.js.map",
     "index.html": "/omnicuris-assignment/index.html",
-    "precache-manifest.37205a6371d188e3d59701002b50f556.js": "/omnicuris-assignment/precache-manifest.37205a6371d188e3d59701002b50f556.js",
+    "precache-manifest.524ae6a6790402387b98a84a44b46e6e.js": "/omnicuris-assignment/precache-manifest.524ae6a6790402387b98a84a44b46e6e.js",
     "service-worker.js": "/omnicuris-assignment/service-worker.js",
     "static/css/main.7fe35e4e.chunk.css.map": "/omnicuris-assignment/static/css/main.7fe35e4e.chunk.css.map",
     "static/js/2.cd3b5010.chunk.js.LICENSE.txt": "/omnicuris-assignment/static/js/2.cd3b5010.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.d749d1b5.js",
     "static/js/2.cd3b5010.chunk.js",
     "static/css/main.7fe35e4e.chunk.css",
-    "static/js/main.2e3bf115.chunk.js"
+    "static/js/main.c3b7414a.chunk.js"
   ]
 }

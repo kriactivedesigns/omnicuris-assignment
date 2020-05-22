@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/omnicuris-assignment/precache-manifest.37205a6371d188e3d59701002b50f556.js"
+  "/omnicuris-assignment/precache-manifest.524ae6a6790402387b98a84a44b46e6e.js"
 );
 
 self.addEventListener('message', (event) => {
