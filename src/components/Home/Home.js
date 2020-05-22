@@ -6,44 +6,49 @@ import Description from '../Description/Description'
 import ExpertList from '../ExpertList/ExpertList'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
+import { connect } from 'react-redux'
+import { getModules } from '../../redux'
+
+const mapStateToProps = (store) => {
+    return {
+        courceDetails: store.courceDetails.courceDetails
+    }
+}
 
 class Home extends Component{
+
+    componentDidMount(){
+        this.props.dispatch(getModules())
+    }
+
     render(){
         return(
             <Container>
-                <Grid container
-                    direction="column"
-                    style={{
-                        minHeight:"100vh"
-                    }}>
-                    <Grid container
-                        direction="row"
-                        spacing={2}>
-                        <Grid item
-                            md={9}
-                            sm={12}>
-                            <Grid container
-                                direction="column"
-                                spacing={3}>
-                                <Grid item
-                                    lg={12}>
-                                    <Title/>
-                                </Grid>
-                                <Grid item
-                                    lg={12}>
-                                    <MediaPlayer/>
-                                </Grid>
-                                <Grid item
-                                    lg={12}>
-                                    <Description/>
+                <Grid container spacing={3}>
+                    <Grid item>
+                        <Grid container spacing={3}>
+                            <Grid item md={8}>
+                                <Grid container spacing={3}>
+                                    <Grid item md={12}>
+                                        <Title/>
+                                    </Grid>
+                                    <Grid item md={12} style={{
+                                            maxHeight: 500,
+                                            marginBottom: 30
+                                        }}>
+                                        <MediaPlayer/>
+                                    </Grid>
+                                    <Grid item md={12}>
+                                        <Description/>
+                                    </Grid>
                                 </Grid>
                             </Grid>
-                        </Grid>
-                        <Grid item>
-                            <ModuleList/>
+                            <Grid item md={4}>
+                                <ModuleList data={this.props.courceDetails}/>
+                            </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item>
+                    <Grid item lg={12}>
                         <ExpertList/>
                     </Grid>
                 </Grid>
@@ -52,4 +57,4 @@ class Home extends Component{
     }
 }
 
-export default Home
+export default connect(mapStateToProps)(Home)
