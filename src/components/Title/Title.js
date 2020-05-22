@@ -2,6 +2,13 @@ import React from 'react'
 import Typography from "@material-ui/core/Typography";
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core';
+import { connect } from 'react-redux'
+
+const mapStateToProps = (store) => {
+    return {
+        chapter: store.chapter.chapter
+    }
+}
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -10,9 +17,17 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-function Title(){
+function Title(props){
 
     const classes = useStyles()
+
+    const [title,setTitle] = React.useState('')
+
+    React.useEffect(() => {
+        if(props.chapter){
+            setTitle(props.chapter.title)
+        }
+    })
 
     return(
         <Paper elevation={2}
@@ -23,11 +38,11 @@ function Title(){
                 <Typography color="primary" 
                     component="span"
                     variant="h6">
-                         Introduction
+                         {title}
                 </Typography>
             </Typography>
         </Paper>
     )
 }
 
-export default Title
+export default connect(mapStateToProps)(Title)

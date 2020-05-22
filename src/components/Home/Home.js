@@ -7,7 +7,6 @@ import ExpertList from '../ExpertList/ExpertList'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import { connect } from 'react-redux'
-import { getModules } from '../../redux'
 
 const mapStateToProps = (store) => {
     return {
@@ -16,10 +15,6 @@ const mapStateToProps = (store) => {
 }
 
 class Home extends Component{
-
-    componentDidMount(){
-        this.props.dispatch(getModules())
-    }
 
     render(){
         return(

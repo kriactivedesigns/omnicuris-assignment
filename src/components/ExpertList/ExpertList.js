@@ -9,6 +9,13 @@ import {
 } from '@material-ui/core'
 import { LargeHeading } from '../Common/Common';
 import image from '../../static/me_bw.png'
+import { connect } from 'react-redux'
+
+const mapStatesToProps = (store) => {
+    return {
+        experts: store.experts.experts
+    }
+}
 
 const useStyles = makeStyles((theme) => ({
     root:{
@@ -31,11 +38,14 @@ function Expert(props) {
     const classes = useStyles()
     const theme = useTheme()
 
+    const { expert } = props
+    console.log(expert)
+
     return(
         <Grid container direction="column" justify="center" spacing={2}>
             <Grid item>
                 <Card className={classes.root} elevation={15}>
-                    <CardMedia image={image}
+                    <CardMedia image={expert.profilePic}
                         className={classes.media}/>
                 </Card>
             </Grid>
@@ -44,29 +54,28 @@ function Expert(props) {
                     style={{
                         color: theme.palette.info.main
                     }}>
-                    Dr. Susheela Rani
+                    {expert.expertName}
                 </Typography>
                 <Typography variant="h6" align="center"
                     style={{
                         color: theme.palette.secondary.main
                     }}>
-                    MBBS, MD
+                    {expert.qualification}
                 </Typography>
             </Grid>
         </Grid>
     )
 }
 
-const renderExpert = (props) => {
-
-    var test = [1,2,3,4,5,6]
-
-    return (
-        test.map((item,key) => 
+const renderExpert = (experts) => {
+    if(experts){
+        return (
+        experts.map((item,key) => 
             <Grid item key={key}>
-                <Expert/>
+                <Expert expert={item}/>
             </Grid>
-    ))
+        ))
+    }    
 }
 
 const listStyle = makeStyles((theme) => ({
@@ -77,9 +86,10 @@ const listStyle = makeStyles((theme) => ({
     }
 }))
 
-function ExpertList(){
+function ExpertList(props){
 
     const classes = listStyle()
+    const { experts } = props
 
     return(
         <Grid container direction="column" spacing={3} justify="center" className={classes.root}>
@@ -89,7 +99,7 @@ function ExpertList(){
             <Grid item>
                 <Grid container direction="row" spacing={9} wrap="nowrap">
                     {
-                        renderExpert()
+                        renderExpert(experts)
                     }
                 </Grid>
             </Grid>
@@ -97,4 +107,4 @@ function ExpertList(){
     )
 }
 
-export default ExpertList
+export default connect(mapStatesToProps)(ExpertList)

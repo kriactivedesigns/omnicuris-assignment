@@ -5,9 +5,7 @@ import {
     GET_MODULES_LIST_FAILED,
 } from './modulesActionTypes'
 import {
-    modulesListUrl,
-    moduleDetailsUrl,
-    expertsUrl
+    modulesListUrl
 } from '../../Constants'
 
 axios.defaults.headers.common['hk-access-token'] = '89e684ac-7ade-4cd8-bbdf-419a92f4cc5f'
@@ -39,7 +37,7 @@ export const getModules = () => {
         .then(response => {
             dispatch(getModulesListSuccess(response.data.courseDetails))
         }).catch(error => {
-            console.log(error)
+            dispatch(getModulesListFailed(error))
         })
     }
 }

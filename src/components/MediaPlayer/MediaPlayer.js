@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { 
     Paper,
     makeStyles, 
 } from '@material-ui/core'
 import ReactPlayer from 'react-player'
+import { connect } from 'react-redux'
+
+const mapStateToProps = (store) => {
+    return {
+        chapter: store.chapter.chapter
+    }
+}
 
 const useStyles = makeStyles((theme) => ({
     media: {
@@ -24,12 +31,20 @@ const useStyles = makeStyles((theme) => ({
 function MediaPlayer (props) {
 
     const classes =useStyles();
+    const [url,setUrl] = React.useState(undefined)
+
+    useEffect(() => {
+        if(props.chapter){
+            setUrl(props.chapter.url)
+        }
+    })
 
     return(
         <Paper elevation={5}
             className={classes.paper}>
             <div className={classes.mask}>
-                <ReactPlayer url="http://s3-ap-southeast-1.amazonaws.com/omnicuris-backend/t_courses/intro_videos/000/000/010/original/Thyroid_Final_480p.mp4"
+                <ReactPlayer url={url}
+                    playing
                     className={classes.media}
                     controls
                     width="100%"
@@ -39,4 +54,4 @@ function MediaPlayer (props) {
     )
 }
 
-export default MediaPlayer
+export default connect(mapStateToProps)(MediaPlayer)
